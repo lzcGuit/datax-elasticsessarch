@@ -5,11 +5,11 @@
 
 ## 1 快速介绍
 
-数据导入elasticsearch的插件
+数据导入```elasticsearch```的插件
 
 ## 2 实现原理
 
-使用elasticsearch的rest api接口， 批量把从reader读入的数据写入elasticsearch
+使用```elasticsearch```的```rest api```接口， 批量把从```reader```读入的数据写入```elasticsearch```
 
 ## 3 功能说明
 
@@ -71,92 +71,92 @@
 
 #### 3.2 参数说明
 
-* endpoint
- * 描述：ElasticSearch的连接地址
+* ```endpoint```
+ * 描述：```ElasticSearch```的连接地址
  * 必选：是
  * 默认值：无
 
-* accessId
+* ```accessId```
  * 描述：用户名
  * 必选：否
  * 默认值：空
 
-* accessKey
+* ```accessKey```
  * 描述：密码
  * 必选：否
  * 默认值：空
 
-* index
- * 描述：elasticsearch中的index名
+* ```index```
+ * 描述：```elasticsearch```中的```index```
  * 必选：是
  * 默认值：无
 
-* type
- * 描述：elasticsearch中index的type名
+* ```type```
+ * 描述：```elasticsearch```中```index```的```type```
  * 必选：否
  * 默认值：doc
 
-* cleanup
+* ```cleanup```
  * 描述：是否删除原索引
  * 必选：否
  * 默认值：false
 
-* batchSize
+* ```batchSize```
  * 描述：每次批量数据的条数
  * 必选：否
  * 默认值：1024
 
-* writePriority
+* ```writePriority```
  * 描述：优先写入(调整flush间隔，数据持久化方式)，但这样会导致在数据写入期间无法立刻查询写入数据，写入完成后，恢复正常。历史数据不受影响，正常查询
  * 必选：否
  * 默认值：false
 
-* trySize
+* ```trySize```
  * 描述：失败后重试的次数
  * 必选：否
  * 默认值：30
 
-* timeout
+* ```timeout```
  * 描述：客户端超时时间
  * 必选：否
  * 默认值：600000
 
-* ignoreWriteError
+* ```ignoreWriteError```
  * 描述：忽略写入错误，不重试，继续写入
  * 必选：否
  * 默认值：false
 
-* ignoreParseError
+* ```ignoreParseError```
  * 描述：忽略解析数据格式错误，继续写入
  * 必选：否
  * 默认值：true
 
-* alias
+* ```alias```
  * 描述：数据导入完成后写入别名
  * 必选：否
  * 默认值：无
 
-* aliasMode
+* ```aliasMode```
  * 描述：数据导入完成后增加别名的模式，append(追加模式), exclusive(只留这一个)
  * 必选：否
  * 默认值：append
 
-* settings
- * 描述：创建index时候的settings, 与elasticsearch官方相同
+* ```settings```
+ * 描述：创建index时候的```settings```, 与```elasticsearch官方```相同
  * 必选：否
  * 默认值：无
 
-* splitter
+* ```splitter```
  * 描述：如果插入数据是array，就使用指定分隔符
  * 必选：否
  * 默认值：-,-
 
-* column
- * 描述：elasticsearch所支持的字段类型，对应index配置的properties
+* ```column```
+ * 描述：elasticsearch所支持的字段类型，对应index配置的```properties```
  * 必选：是
 
-* dynamic
- * 描述: mappings使用严格模式，禁止自动生成字段映射
+* ```dynamic```
+ * 描述: ```mappings```使用严格模式，禁止自动生成字段映射
  * 必选: 是
  * 默认值: strict
 
